@@ -19,19 +19,19 @@ public class MainWind extends Application {
         primaryStage.setResizable(false);
 
         Button buttonPerekid = new Button("Перекидыватель слов");
-        buttonPerekid.setMinSize(170, 170);
+        buttonPerekid.setMinSize(150, 150);
 
         Button buttonVidget = new Button("Виджеты-невидимки");
-        buttonVidget.setMinSize(170, 170);
+        buttonVidget.setMinSize(150, 150);
 
         Button buttonRestoran = new Button("Заказы в ресторане");
-        buttonRestoran.setMinSize(170, 170);
+        buttonRestoran.setMinSize(150, 150);
 
         Button buttonKalk = new Button("Калькулятор");
-        buttonKalk.setMinSize(170, 170);
+        buttonKalk.setMinSize(150, 150);
 
         Button buttonFlag = new Button("Текстовый флаг");
-        buttonFlag.setMinSize(170, 170);
+        buttonFlag.setMinSize(150, 150);
 
         buttonPerekid.setOnAction(e -> {
             closeCurrentChild();
