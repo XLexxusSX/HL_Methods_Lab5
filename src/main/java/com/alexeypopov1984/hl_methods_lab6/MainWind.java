@@ -1,0 +1,64 @@
+package com.alexeypopov1984.hl_methods_lab6;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class MainWind extends Application {
+    private Stage primaryStage;
+    private Stage currentChildStage = null;
+
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        primaryStage.setMaximized(true);
+        primaryStage.setResizable(false);
+
+        Button buttonPerekid = new Button("Перекидыватель слов");
+        buttonPerekid.setMinSize(170, 170);
+
+        Button buttonVidget = new Button("Виджеты-невидимки");
+        buttonVidget.setMinSize(170, 170);
+
+        Button buttonRestoran = new Button("Заказы в ресторане");
+        buttonRestoran.setMinSize(170, 170);
+
+        Button buttonKalk = new Button("Калькулятор");
+        buttonKalk.setMinSize(170, 170);
+
+        Button buttonFlag = new Button("Текстовый флаг");
+        buttonFlag.setMinSize(170, 170);
+
+        buttonPerekid.setOnAction(e -> {
+            closeCurrentChild();
+            currentChildStage = Zadacha_1_Perekid.showWindow(primaryStage);
+        });
+        buttonVidget.setOnAction(e -> {
+            closeCurrentChild();
+            currentChildStage = Zadacha_2_Vidzhety.showWindow(primaryStage);
+        });
+
+        HBox hbox = new HBox(10, buttonPerekid, buttonVidget, buttonRestoran, buttonFlag, buttonKalk);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.setPadding(new Insets(20));
+
+        Scene scene = new Scene(hbox, 400, 100);
+        primaryStage.setTitle("Лабораторная работа №6");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void closeCurrentChild() {
+        if (currentChildStage != null && currentChildStage.isShowing()) {
+            currentChildStage.close();
+        }
+    }
+
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+}
