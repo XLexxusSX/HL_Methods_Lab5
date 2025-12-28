@@ -1,6 +1,7 @@
 plugins {
     java
     application
+//    id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
@@ -28,7 +29,7 @@ javafx {
 }
 
 application {
-    mainClass.set("com.AlexeyPopov1984.Launcher")
+    mainClass.set("com.alexeypopov1984.hl_methods_lab6.Launcher")
 }
 
 tasks.named<JavaExec>("run") {
@@ -39,3 +40,12 @@ tasks.named<JavaExec>("run") {
         )
     }
 }
+
+//tasks.named<JavaExec>("run") {
+//    doFirst {
+//        jvmArgs = listOf(
+//            "--module-path", "C:/javafx-sdk-25.0.1/lib",
+//            "--add-modules", "javafx.controls,javafx.fxml,javafx.web"
+//        )
+//    }
+//}
