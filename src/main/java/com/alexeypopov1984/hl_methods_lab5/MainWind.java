@@ -1,4 +1,4 @@
-package com.alexeypopov1984.hl_methods_lab6;
+package com.alexeypopov1984.hl_methods_lab5;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -24,8 +24,8 @@ public class MainWind extends Application {
         Button buttonVidget = new Button("Виджеты-невидимки");
         buttonVidget.setMinSize(150, 150);
 
-        Button buttonRestoran = new Button("Заказы в ресторане");
-        buttonRestoran.setMinSize(150, 150);
+        Button buttonZakazy = new Button("Заказы в ресторане");
+        buttonZakazy.setMinSize(150, 150);
 
         Button buttonKalk = new Button("Калькулятор");
         buttonKalk.setMinSize(150, 150);
@@ -37,12 +37,18 @@ public class MainWind extends Application {
             closeCurrentChild();
             currentChildStage = Zadacha_1_Perekid.showWindow(primaryStage);
         });
+
         buttonVidget.setOnAction(e -> {
             closeCurrentChild();
             currentChildStage = Zadacha_2_Vidzhety.showWindow(primaryStage);
         });
 
-        HBox hbox = new HBox(10, buttonPerekid, buttonVidget, buttonRestoran, buttonFlag, buttonKalk);
+        buttonZakazy.setOnAction(e -> {
+            closeCurrentChild();
+            currentChildStage = Zadacha_3_Zakazy.showWindow(primaryStage);
+        });
+
+        HBox hbox = new HBox(10, buttonPerekid, buttonVidget, buttonZakazy, buttonFlag, buttonKalk);
         hbox.setAlignment(Pos.CENTER);
         hbox.setPadding(new Insets(20));
 
@@ -57,8 +63,4 @@ public class MainWind extends Application {
             currentChildStage.close();
         }
     }
-
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
 }
