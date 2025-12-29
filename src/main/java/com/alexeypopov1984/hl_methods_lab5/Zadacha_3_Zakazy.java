@@ -41,7 +41,9 @@ public class Zadacha_3_Zakazy {
 
         Button orderButton = new Button("Заказать");
         orderButton.setOnAction(e -> chek(stage, checkBoxes, textFieldkolvo, foods, prices));
+        HBox hbox = new HBox(10);
         vbox.getChildren().add(orderButton);
+        vbox.setAlignment(Pos.BASELINE_CENTER);
 
         Scene scene = new Scene(vbox, 400, 250);
         stage.setTitle("Заказ в ресторане");
