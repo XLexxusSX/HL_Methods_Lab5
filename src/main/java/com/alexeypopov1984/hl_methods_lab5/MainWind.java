@@ -6,16 +6,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
-
 public class MainWind extends Application {
-    private Stage primaryStage;
-    private Stage currentChildStage = null;
 
     @Override
     public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        primaryStage.setMaximized(true);
+
         primaryStage.setResizable(false);
 
         Button buttonPerekid = new Button("Перекидыватель слов");
@@ -33,34 +30,28 @@ public class MainWind extends Application {
         Button buttonFlag = new Button("Текстовый флаг");
         buttonFlag.setMinSize(150, 150);
 
-        buttonPerekid.setOnAction(e -> {
-            closeCurrentChild();
-            currentChildStage = Zadacha_1_Perekid.showWindow(primaryStage);
-        });
+        buttonPerekid.setOnAction(e -> Zadacha_1_Perekid.showWindow(primaryStage));
 
-        buttonVidget.setOnAction(e -> {
-            closeCurrentChild();
-            currentChildStage = Zadacha_2_Vidzhety.showWindow(primaryStage);
-        });
+        buttonVidget.setOnAction(e -> Zadacha_2_Vidzhety.showWindow(primaryStage));
 
-        buttonZakazy.setOnAction(e -> {
-            closeCurrentChild();
-            currentChildStage = Zadacha_3_Zakazy.showWindow(primaryStage);
-        });
+        buttonZakazy.setOnAction(e -> Zadacha_3_Zakazy.showWindow(primaryStage));
 
         HBox hbox = new HBox(10, buttonPerekid, buttonVidget, buttonZakazy, buttonFlag, buttonKalk);
         hbox.setAlignment(Pos.CENTER);
         hbox.setPadding(new Insets(20));
 
-        Scene scene = new Scene(hbox, 400, 100);
-        primaryStage.setTitle("Лабораторная работа №6");
+        Scene scene = new Scene(hbox, 600, 600);
+        primaryStage.setTitle("Лабораторная работа №5");
+
+
+        //primaryStage.setAlwaysOnTop(true);
+
+//        primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
+//        primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
+//        primaryStage.setX(0);
+//        primaryStage.setY(0);
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    private void closeCurrentChild() {
-        if (currentChildStage != null && currentChildStage.isShowing()) {
-            currentChildStage.close();
-        }
+        primaryStage.setMaximized(true);
     }
 }

@@ -14,7 +14,7 @@ public class Zadacha_1_Perekid {
     private static final TextField textField2 = new TextField();
     private static boolean tag = true;
 
-    public static Stage showWindow(Stage owner) {
+    public static void showWindow(Stage owner) {
         Stage stage = new Stage();
         stage.setTitle("Перекидыватль слов");
         stage.initModality(Modality.WINDOW_MODAL);
@@ -35,10 +35,8 @@ public class Zadacha_1_Perekid {
 
         stage.show();
 
-        stage.setX(owner.getWidth() / 2 - stage.getWidth() / 2);
-        stage.setY(owner.getHeight() / 2 - stage.getHeight() / 2);
-
-        return stage;
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2);
     }
 
     private static void Foo() {

@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93bec401-42da-4ed5-86c1-99d45bb7a5d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_3_Zakazy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab6/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab6/MainWind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/MainWind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab6/Zadacha_1_Perekid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_1_Perekid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab6/Zadacha_2_Vidzhety.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_2_Vidzhety.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/MainWind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/MainWind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_1_Perekid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_1_Perekid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_2_Vidzhety.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_2_Vidzhety.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_3_Zakazy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexeypopov1984/hl_methods_lab5/Zadacha_3_Zakazy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/XLexxusSX/HL_Methods_Lab6.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/XLexxusSX/HL_Methods_Lab5.git&quot;,
     &quot;accountId&quot;: &quot;34555031-5b41-43ed-b1df-d53b0e8d467c&quot;
   }
 }</component>
@@ -76,6 +72,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.HL_Methods_Lab5 [:com.alexeypopov1984.hl_methods_lab5.Launcher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HL_Methods_Lab5 [:com.alexeypopov1984.hl_methods_lab5.MainWind.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.HL_Methods_Lab6 [:com.AlexeyPopov1984.Main.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.HL_Methods_Lab6 [:com.AlexeyPopov1984.hl_methods_lab6.Main.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.HL_Methods_Lab6 [:com.alexeypopov1984.HelloApplication.main()].executor&quot;: &quot;Run&quot;,
@@ -124,5 +121,16 @@
       <updated>1766890045553</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
