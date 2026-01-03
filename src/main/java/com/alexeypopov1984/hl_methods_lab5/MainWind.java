@@ -42,7 +42,7 @@ public class MainWind extends Application {
         hbox.setAlignment(Pos.CENTER);
         hbox.setPadding(new Insets(20));
 
-        Scene scene = new Scene(hbox, 600, 600);
+        Scene scene = new Scene(hbox, 800, 600);
         primaryStage.setTitle("Лабораторная работа №5");
 
 

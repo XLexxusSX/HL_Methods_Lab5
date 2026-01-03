@@ -19,7 +19,7 @@ public class Zadacha_4_Kalk {
         vbox.setPadding(new Insets(20));
         Stage stage = new Stage();
         Scene scene = new Scene(vbox, 400, 250);
-        stage.setTitle("Заказ в ресторане");
+        stage.setTitle("Калькулятор");
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(owner);
         stage.setResizable(false);
