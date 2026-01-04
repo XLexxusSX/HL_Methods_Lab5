@@ -68,7 +68,7 @@ public class Zadacha_2_Vidzhety {
         stage.setScene(scene);
         stage.show();
 
-        stage.setX((owner.getWidth() - stage.getWidth()) / 2);
-        stage.setY((owner.getHeight() - stage.getHeight()) / 2);
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2 + 40);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2 + 40);
     }
 }

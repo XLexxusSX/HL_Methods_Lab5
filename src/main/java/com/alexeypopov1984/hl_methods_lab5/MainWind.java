@@ -38,6 +38,8 @@ public class MainWind extends Application {
 
         buttonKalk.setOnAction(e -> Zadacha_4_Kalk.showWindow(primaryStage));
 
+        buttonFlag.setOnAction(e -> Zadacha_5_Flag.showWindow(primaryStage));
+
         HBox hbox = new HBox(10, buttonPerekid, buttonVidget, buttonZakazy, buttonKalk, buttonFlag);
         hbox.setAlignment(Pos.CENTER);
         hbox.setPadding(new Insets(20));

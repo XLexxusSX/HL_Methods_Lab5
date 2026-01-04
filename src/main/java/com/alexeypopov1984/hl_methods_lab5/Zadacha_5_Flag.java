@@ -1,0 +1,68 @@
+package com.alexeypopov1984.hl_methods_lab5;
+
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.Modality;
+
+public class Zadacha_5_Flag {
+
+    private static String selectedColor1 = null;
+    private static String selectedColor2 = null;
+    private static String selectedColor3 = null;
+
+    public static void showWindow(Stage owner) {
+
+        Button drawButton = new Button("Нарисовать");
+        Label resultLabel = new Label("Выберите цвета и нажмите 'Нарисовать'");
+
+        ToggleGroup group1 = new ToggleGroup();
+        ToggleGroup group2 = new ToggleGroup();
+        ToggleGroup group3 = new ToggleGroup();
+
+        String[] colors = {"Оранжевый", "Зелёный", "Синий", "Красный", "Фиолетовыый"};
+
+        VBox vboxPolosa1 = new VBox(5);
+        vboxPolosa1.getChildren().add(new Label("Полоса 1:"));
+        for (String color : colors) {
+            RadioButton rb = new RadioButton(color);
+            rb.setToggleGroup(group1);
+            rb.setOnAction(e -> selectedColor1 = rb.getText());
+            vboxPolosa1.getChildren().add(rb);
+        }
+
+        drawButton.setOnAction(e -> {
+            if (selectedColor1 != null && selectedColor2 != null && selectedColor3 != null) {
+                String flag = selectedColor1 + ", " + selectedColor2 + ", " + selectedColor3;
+                resultLabel.setText("Флаг: " + flag);
+            } else {
+                resultLabel.setText("Выберите цвет для каждой полосы!");
+            }
+        });
+
+//        VBox vbox = new VBox(25, drawButton, resultLabel);
+//        vbox.setAlignment(Pos.CENTER);
+
+//        HBox hbox = new HBox(20, drawButton, resultLabel);
+//        hBox.setAlignment(Pos.CENTER);
+
+        HBox polosyBox = new HBox(20, vboxPolosa1);
+        polosyBox.setAlignment(Pos.CENTER);
+
+        VBox mainBox = new VBox(20, vboxPolosa1, drawButton, resultLabel);
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(mainBox, 300, 340);
+        stage.setTitle("Текстовый флаг");
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(owner);
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2 + 40);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2 + 40);
+    }
+}

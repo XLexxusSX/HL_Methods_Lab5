@@ -19,7 +19,7 @@ public class Zadacha_3_Zakazy {
         double[] prices = {0.14, 0.13, 5.52, 0.1, 3.5};
 
         CheckBox[] checkBoxes = new CheckBox[foods.length];
-        TextField[] textFieldkolvo = new TextField[foods.length];
+        Spinner<Integer>[] spinners = new Spinner[foods.length];
 
         VBox vbox = new VBox(10);
         vbox.setAlignment(Pos.CENTER_LEFT);
@@ -28,20 +28,19 @@ public class Zadacha_3_Zakazy {
         for (int i = 0; i < foods.length; i++) {
             checkBoxes[i] = new CheckBox();
             checkBoxes[i].setText(foods[i] + " - " + prices[i] + " руб.");
-            checkBoxes[i].setPrefWidth(250);
+            checkBoxes[i].setPrefWidth(240);
 
-            textFieldkolvo[i] = new TextField();
-            textFieldkolvo[i].setText("1");
-            textFieldkolvo[i].setPrefWidth(30);
+            spinners[i] = new Spinner<Integer>(0, Integer.MAX_VALUE, 0);
+            spinners[i].setPrefWidth(80);
+            spinners[i].setEditable(true);
 
-            HBox hbox = new HBox(10, checkBoxes[i], textFieldkolvo[i], new Label("шт."));
+            HBox hbox = new HBox(10, checkBoxes[i], spinners[i], new Label("шт."));
             hbox.setAlignment(Pos.CENTER_LEFT);
             vbox.getChildren().add(hbox);
         }
 
         Button orderButton = new Button("Заказать");
-        orderButton.setOnAction(e -> chek(stage, checkBoxes, textFieldkolvo, foods, prices));
-        HBox hbox = new HBox(10);
+        orderButton.setOnAction(e -> chek(stage, checkBoxes, spinners, foods, prices));
         vbox.getChildren().add(orderButton);
         vbox.setAlignment(Pos.BASELINE_CENTER);
 
@@ -52,17 +51,17 @@ public class Zadacha_3_Zakazy {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        stage.setX((owner.getWidth() - stage.getWidth()) / 2);
-        stage.setY((owner.getHeight() - stage.getHeight()) / 2);
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2 + 40);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2 + 40);
     }
 
-    private static void chek(Stage owner, CheckBox[] chb, TextField[] tf, String[] foods, double[] prices) {
+    private static void chek(Stage owner, CheckBox[] chb, Spinner<Integer>[] sp, String[] foods, double[] prices) {
         String chekZaHavku = "";
         double total = 0;
 
         for (int i = 0; i < foods.length; i++) {
             if (chb[i].isSelected()) {
-                int kolvo = Integer.parseInt(tf[i].getText());
+                int kolvo = sp[i].getValue();
                 double generalPrice = prices[i] * kolvo;
                 generalPrice = Math.round(generalPrice * 100) / 100.0;
                 chekZaHavku += foods[i] + " - " + kolvo + " шт. - " + generalPrice + " руб.\n";
@@ -90,7 +89,7 @@ public class Zadacha_3_Zakazy {
 
             VBox vbox = new VBox(textArea);
             vbox.setAlignment(Pos.CENTER);
-            vbox.setPadding(new Insets(3));
+            //vbox.setPadding(new Insets(0));
 
             Scene scene = new Scene(vbox, 300, 150);
             stage.setScene(scene);

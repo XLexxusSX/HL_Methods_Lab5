@@ -35,8 +35,8 @@ public class Zadacha_1_Perekid {
 
         stage.show();
 
-        stage.setX((owner.getWidth() - stage.getWidth()) / 2);
-        stage.setY((owner.getHeight() - stage.getHeight()) / 2);
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2 + 40);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2 + 40);
     }
 
     private static void Foo() {

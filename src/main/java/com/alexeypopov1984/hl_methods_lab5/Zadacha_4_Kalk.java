@@ -11,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.geometry.Insets;
 
-import javafx.stage.Stage;
-
 public class Zadacha_4_Kalk {
     private static final TextField textFieldForNums = new TextField();
     private static double firstNumber = 0;
@@ -30,9 +28,11 @@ public class Zadacha_4_Kalk {
             numberButtons[i].setMinWidth(40);
         }
 
+        textFieldForNums.setMaxWidth(244);
+
         Button clearButton = new Button("C");
         clearButton.setOnAction(e -> clear());
-        clearButton.setMinWidth(40);
+        clearButton.setMinWidth(108);
 
         Button dotButton = new Button(".");
         dotButton.setOnAction(e -> appendNum("."));
@@ -56,15 +56,15 @@ public class Zadacha_4_Kalk {
 
         Button equalsButton = new Button("=");
         equalsButton.setOnAction(e -> equals());
-        equalsButton.setMinWidth(40);
+        equalsButton.setMinWidth(108);
 
         Button plusMinusButton = new Button("+/-");
         plusMinusButton.setOnAction(e -> plusMinus());
         plusMinusButton.setMinWidth(40);
 
         GridPane grid = new GridPane();
-        grid.setHgap(25);
-        grid.setVgap(25);
+        grid.setHgap(28);
+        grid.setVgap(28);
         grid.setAlignment(Pos.CENTER);
 
         grid.add(numberButtons[7], 0, 0);
@@ -87,29 +87,26 @@ public class Zadacha_4_Kalk {
         grid.add(dotButton,        2, 3);
         grid.add(plusButton,       3, 3);
 
-        grid.add(clearButton, 0, 4);
+        GridPane gridSec = new GridPane();
+        gridSec.setHgap(28);
+        gridSec.setVgap(0);
+        gridSec.add(clearButton,  0, 0);
+        gridSec.add(equalsButton, 1, 0);
+        gridSec.setAlignment(Pos.TOP_CENTER);
 
-//        gridSec.add(equalsButton, 0, 0);
-//        gridSec.add(multButton, 1, 0);
-//        gridSec.add(divButton, 2, 0);
-//        gridSec.add(dotButton, 3, 0);
-//        gridSec.add(plusMinusButton, 4, 0);
-
-        //grid.add(clearButton, 0, 4, 4, 1);
-
-        VBox vbox = new VBox(10, textFieldForNums, grid);
+        VBox vbox = new VBox(25, textFieldForNums, grid, gridSec);
         vbox.setAlignment(Pos.CENTER);
-        vbox.setPadding(new Insets(20));
+        vbox.setPadding(new Insets(10));
         Stage stage = new Stage();
-        Scene scene = new Scene(vbox, 400, 250);
+        Scene scene = new Scene(vbox, 300, 340);
         stage.setTitle("Калькулятор");
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(owner);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        stage.setX((owner.getWidth() - stage.getWidth()) / 2);
-        stage.setY((owner.getHeight() - stage.getHeight()) / 2);
+        stage.setX((owner.getWidth() - stage.getWidth()) / 2 + 40);
+        stage.setY((owner.getHeight() - stage.getHeight()) / 2 + 40);
     }
 
     private static void equals() {
@@ -161,7 +158,7 @@ public class Zadacha_4_Kalk {
         thisOperation = operation;
         startNewNumber = true;
     }
-    
+
     private static void plusMinus(){
         String currentText = textFieldForNums.getText();
         if (!currentText.equals("0")) {
