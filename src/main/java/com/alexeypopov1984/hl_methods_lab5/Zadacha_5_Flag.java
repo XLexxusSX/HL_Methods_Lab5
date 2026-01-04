@@ -34,6 +34,24 @@ public class Zadacha_5_Flag {
             vboxPolosa1.getChildren().add(rb);
         }
 
+        VBox vboxPolosa2 = new VBox(5);
+        vboxPolosa1.getChildren().add(new Label("Полоса 2:"));
+        for (String color : colors) {
+            RadioButton rb = new RadioButton(color);
+            rb.setToggleGroup(group2);
+            rb.setOnAction(e -> selectedColor2 = rb.getText());
+            vboxPolosa2.getChildren().add(rb);
+        }
+
+        VBox vboxPolosa3 = new VBox(5);
+        vboxPolosa1.getChildren().add(new Label("Полоса 3:"));
+        for (String color : colors) {
+            RadioButton rb = new RadioButton(color);
+            rb.setToggleGroup(group3);
+            rb.setOnAction(e -> selectedColor3 = rb.getText());
+            vboxPolosa3.getChildren().add(rb);
+        }
+
         drawButton.setOnAction(e -> {
             if (selectedColor1 != null && selectedColor2 != null && selectedColor3 != null) {
                 String flag = selectedColor1 + ", " + selectedColor2 + ", " + selectedColor3;
@@ -49,10 +67,10 @@ public class Zadacha_5_Flag {
 //        HBox hbox = new HBox(20, drawButton, resultLabel);
 //        hBox.setAlignment(Pos.CENTER);
 
-        HBox polosyBox = new HBox(20, vboxPolosa1);
+        HBox polosyBox = new HBox(20, vboxPolosa1, vboxPolosa2, vboxPolosa3);
         polosyBox.setAlignment(Pos.CENTER);
 
-        VBox mainBox = new VBox(20, vboxPolosa1, drawButton, resultLabel);
+        VBox mainBox = new VBox(20, polosyBox, drawButton, resultLabel);
 
         Stage stage = new Stage();
         Scene scene = new Scene(mainBox, 300, 340);
