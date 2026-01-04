@@ -14,6 +14,11 @@ import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
 public class Zadacha_4_Kalk {
+    private static TextField textFieldForNums = new TextField();
+    private static double firstNumber = 0;
+    private static String operation = "";
+    private static boolean startNewNumber = true;
+
     public static void showWindow(Stage owner) {
 
         GridPane grid = new GridPane();
@@ -22,16 +27,21 @@ public class Zadacha_4_Kalk {
         grid.setAlignment(Pos.CENTER);
 
         Button[] numberButtons = new Button[10];
+
         for (int i = 0; i < 10; i++) {
             numberButtons[i] = new Button(String.valueOf(i));
+            int num = i;
+            numberButtons[i].setOnAction(e -> appendNum(String.valueOf(num)));
         }
+
+        Button clearButton = new Button("C");
+        clearButton.setOnAction(e -> clear());
 
         grid.add(numberButtons[0], 0, 0);
         grid.add(numberButtons[1], 1, 0);
         grid.add(numberButtons[2], 2, 0);
-        //grid.add(divideButton, 3, 0);
 
-        VBox vbox = new VBox(10, grid);
+        VBox vbox = new VBox(10, textFieldForNums, grid, clearButton);
         vbox.setAlignment(Pos.CENTER_LEFT);
         vbox.setPadding(new Insets(20));
         Stage stage = new Stage();
@@ -46,5 +56,19 @@ public class Zadacha_4_Kalk {
         stage.setY((owner.getHeight() - stage.getHeight()) / 2);
     }
 
-    
+    private static void appendNum (String num){
+        if (startNewNumber) {
+            textFieldForNums.setText(num);
+            startNewNumber = false;
+        } else {
+            textFieldForNums.setText(textFieldForNums.getText() + num);
+        }
+    }
+
+    private static void clear() {
+        textFieldForNums.setText("0");
+        firstNumber = 0;
+        operation = "";
+        startNewNumber = true;
+    }
 }
