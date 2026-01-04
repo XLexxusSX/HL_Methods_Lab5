@@ -17,7 +17,7 @@ public class Zadacha_5_Flag {
     public static void showWindow(Stage owner) {
 
         Button drawButton = new Button("Нарисовать");
-        Label resultLabel = new Label("Выберите цвета и нажмите 'Нарисовать'");
+        Label resultLabel = new Label("Выберите цвета и нажмите \"Нарисовать\":");
 
         ToggleGroup group1 = new ToggleGroup();
         ToggleGroup group2 = new ToggleGroup();
@@ -35,7 +35,7 @@ public class Zadacha_5_Flag {
         }
 
         VBox vboxPolosa2 = new VBox(5);
-        vboxPolosa1.getChildren().add(new Label("Полоса 2:"));
+        vboxPolosa2.getChildren().add(new Label("Полоса 2:"));
         for (String color : colors) {
             RadioButton rb = new RadioButton(color);
             rb.setToggleGroup(group2);
@@ -44,7 +44,7 @@ public class Zadacha_5_Flag {
         }
 
         VBox vboxPolosa3 = new VBox(5);
-        vboxPolosa1.getChildren().add(new Label("Полоса 3:"));
+        vboxPolosa3.getChildren().add(new Label("Полоса 3:"));
         for (String color : colors) {
             RadioButton rb = new RadioButton(color);
             rb.setToggleGroup(group3);
@@ -61,19 +61,14 @@ public class Zadacha_5_Flag {
             }
         });
 
-//        VBox vbox = new VBox(25, drawButton, resultLabel);
-//        vbox.setAlignment(Pos.CENTER);
-
-//        HBox hbox = new HBox(20, drawButton, resultLabel);
-//        hBox.setAlignment(Pos.CENTER);
-
         HBox polosyBox = new HBox(20, vboxPolosa1, vboxPolosa2, vboxPolosa3);
         polosyBox.setAlignment(Pos.CENTER);
 
-        VBox mainBox = new VBox(20, polosyBox, drawButton, resultLabel);
+        VBox mainBox = new VBox(20, polosyBox, resultLabel, drawButton);
+        mainBox.setAlignment(Pos.CENTER);
 
         Stage stage = new Stage();
-        Scene scene = new Scene(mainBox, 300, 340);
+        Scene scene = new Scene(mainBox, 380, 265);
         stage.setTitle("Текстовый флаг");
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(owner);
