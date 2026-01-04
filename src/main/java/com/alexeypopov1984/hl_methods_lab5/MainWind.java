@@ -48,12 +48,13 @@ public class MainWind extends Application {
 
         //primaryStage.setAlwaysOnTop(true);
 
-//        primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
-//        primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
-//        primaryStage.setX(0);
-//        primaryStage.setY(0);
+        primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth()  - 80);
+        primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() - 80);
+        primaryStage.setX(40);
+        primaryStage.setY(40);
+
         primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setMaximized(true);
+        //primaryStage.setMaximized(true);
     }
 }
