@@ -17,6 +17,6 @@ module com.alexeypopov1984.hlmethods.lab6 {
     requires javafx.fxml;
     requires javafx.graphics;
 
-    exports com.alexeypopov1984.hl_methods_lab5;
+    exports com.alexeypopov1984;
 }
 

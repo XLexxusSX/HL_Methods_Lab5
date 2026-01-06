@@ -1,4 +1,4 @@
-package com.alexeypopov1984.hl_methods_lab5;
+package com.alexeypopov1984;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

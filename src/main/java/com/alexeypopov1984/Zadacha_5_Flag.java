@@ -1,4 +1,4 @@
-package com.alexeypopov1984.hl_methods_lab5;
+package com.alexeypopov1984;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,13 +8,18 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 
+import java.util.Objects;
+
 public class Zadacha_5_Flag {
 
-    private static String selectedColor1 = null;
-    private static String selectedColor2 = null;
-    private static String selectedColor3 = null;
+    private static String selectedColor1 = "Ne vybran";
+    private static String selectedColor2 = "Ne vybran";
+    private static String selectedColor3 = "Ne vybran";
 
     public static void showWindow(Stage owner) {
+        selectedColor1 = "Ne vybran";
+        selectedColor2 = "Ne vybran";
+        selectedColor3 = "Ne vybran";
 
         Button drawButton = new Button("Нарисовать");
         Label resultLabel = new Label("Выберите цвета и нажмите \"Нарисовать\":");
@@ -53,9 +58,12 @@ public class Zadacha_5_Flag {
         }
 
         drawButton.setOnAction(e -> {
-            if (selectedColor1 != null && selectedColor2 != null && selectedColor3 != null) {
+            if (!Objects.equals(selectedColor1, "Ne vybran") && !Objects.equals(selectedColor2, "Ne vybran") && !Objects.equals(selectedColor3, "Ne vybran")) {
                 String flag = selectedColor1 + ", " + selectedColor2 + ", " + selectedColor3;
                 resultLabel.setText("Флаг: " + flag);
+//                selectedColor1 = "Ne vybran";
+//                selectedColor2 = "Ne vybran";
+//                selectedColor3 = "Ne vybran";
             } else {
                 resultLabel.setText("Выберите цвет для каждой полосы!");
             }

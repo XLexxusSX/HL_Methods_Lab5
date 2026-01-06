@@ -29,7 +29,7 @@ javafx {
 }
 
 application {
-    mainClass.set("com.alexeypopov1984.hl_methods_lab5.Launcher")
+    mainClass.set("com.alexeypopov1984.Launcher")
 }
 
 tasks.named<JavaExec>("run") {
